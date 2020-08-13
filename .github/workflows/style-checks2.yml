@@ -38,7 +38,7 @@ jobs:
       id: black
       run: |
         black --version
-        black --check yt/
+        black --check --diff yt/ 
         
   isort:
     name: isort
