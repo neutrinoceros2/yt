@@ -1,0 +1,35 @@
+name: Style Checks
+  on:[push]
+  
+  jobs:
+    build:
+      name: build
+      runs-on: ubuntu-latest
+      steps:
+        - name: install
+          id: install
+          run : pip install -r tests/linting_requirements.txt
+
+        - name: flake8
+          id: flake8
+          run: |
+            flake8 --version
+            flake8 yt/
+
+        - name: black
+          id: black
+          run: |
+            black --version
+            black --check yt/
+
+        - name: isort
+          id: isort
+          run: |
+            isort --version-number
+            isort . --check --diff
+
+        - name: flynt
+          is: flynt
+          run: |
+            flynt --version
+            flynt --fail-on-change --dry-run yt/
