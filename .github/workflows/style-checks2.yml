@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: install
         id: install
-        run : pip install -r tests/linting_requirements.txt
+        run : pip install -r tests/lint_requirements.txt
 
       - name: flake8
         id: flake8
