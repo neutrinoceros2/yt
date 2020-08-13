@@ -14,6 +14,21 @@ from yt.utilities.object_registries import (
 )
 
 
+# try to trigger all checks at once
+
+# isort
+import sys
+# flynt
+print("%s" % "hello world")
+# flake8
+for i in range(2):
+    pass
+# black
+myvar = {None
+:1}
+
+assert False
+
 def load(fn, *args, **kwargs):
     """
     Load a Dataset or DatasetSeries object.
