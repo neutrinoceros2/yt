@@ -37,4 +37,4 @@ jobs:
       id: flynt
       run: |
         flynt --version
-        flynt --fail-on-change --dry-run yt/
+        flynt yt --fail-on-change --dry-run --exclude yt/extern
